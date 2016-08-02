@@ -1,0 +1,40 @@
+{
+  "name": "/generator-npm",
+  "version": "1.2.0",
+  "description": "Bootstraps npm modules",
+  "scripts": {
+    "lint:report": "eslint -f checkstyle -o build2/reports/lint/eslint-checkstyle-result.xml .",
+    "lint": "eslint .",
+    "test:report": "(npm run test:unit-report || true) && npm run test:coverage",
+    "test": "npm run test:unit && npm run test:coverage",
+    "ci-update-package": "ci-update-package",
+    "ci-pkginfo:dataload": "ci-pkginfo -t dataload",
+    "test:coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "test:unit": "istanbul cover _mocha",
+    "test:unit-report": "istanbul cover _mocha -- -R mocha-junit-reporter -O mochaFile=./build2/reports/unit/mocha-junit-result.xml"
+  },
+  "files": [
+    "generators",
+    "lib"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "lodash": "^4.11.1",
+    "uuid": "^2.0.2",
+    "yeoman-generator": "^0.22.5"
+  },
+  "devDependencies": {
+    "/ci-pkginfo": "^1.1.0",
+    "/ci-update-package": "^1.1.0",
+    "eslint": "^2.8.0",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.4.5",
+    "mocha-junit-reporter": "^1.11.1",
+    "sinon": "^1.17.3"
+  },
+  "publishConfig": {
+    "registry": "https://"
+  },
+  "homepage": "https://"
+}
