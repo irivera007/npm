@@ -1,6 +1,6 @@
 {
   "name": "@okta/i18n",
-  "version": "15.9.0",
+  "version": "15.9.1",
   "description": "Okta Localization",
   "repository": "https://github.com/okta/npm/tree/master/i18n",
   "files": [
