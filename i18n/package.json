@@ -1,0 +1,52 @@
+{
+  "name": "@okta/i18n",
+  "version": "15.9.0",
+  "description": "Okta Localization",
+  "repository": "https://github.com/okta/npm/tree/master/i18n",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint:report": "grunt lint --checkstyle --force",
+    "lint": "grunt lint",
+    "test:coverage": "exit 0;",
+    "test:unit": "mocha --ui bdd --require tasks/i18ndiff/test/support/node -R spec tasks/i18ndiff/test",
+    "test:unit-report": "mocha --ui bdd --require tasks/i18ndiff/test/support/node -R mocha-junit-reporter -O mochaFile=./build2/reports/unit/mocha-junit-result.xml tasks/i18ndiff/test",
+    "test:report": "npm run test:unit-report ; exit 0",
+    "test": "npm run test:unit",
+    "ci-pkginfo:dataload": "ci-pkginfo -t dataload",
+    "ci-update-package": "ci-update-package",
+    "prepublish": "grunt package",
+    "diff": "grunt i18n-generate-diff",
+    "diff-all": "grunt i18n-generate-diff --all",
+    "import": "grunt i18n-import-diff",
+    "link": "grunt link"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@okta/ci-pkginfo": "^1.1.0",
+    "@okta/ci-update-package": "^1.1.0",
+    "chai": "^3.5.0",
+    "csv-stringify": "^1.0.2",
+    "deep-diff": "^0.3.3",
+    "grunt": "^1.0.1",
+    "grunt-banner": "^0.6.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^18.1.0",
+    "grunt-properties-to-json": "0.6.0",
+    "grunt-shell": "^1.3.0",
+    "istanbul": "^0.4.3",
+    "lodash": "^4.11.0",
+    "mocha": "^2.4.5",
+    "mocha-junit-reporter": "^1.11.1",
+    "properties": "^1.2.1",
+    "q": "^1.4.1",
+    "semver": "^5.1.0"
+  },
+  "publishConfig": {
+    "registry": "https://artifacts.aue1d.saasure.com/artifactory/api/npm/npm-okta"
+  },
+  "homepage": "https://github.com/okta/npm/tree/master/i18n"
+}
