@@ -1,0 +1,33 @@
+{
+  "name": "@okta/ci-pkginfo",
+  "version": "1.2.0",
+  "description": "Gets package properties and okta metadata",
+  "bin": {
+    "ci-pkginfo": "./bin/ci-pkginfo.js"
+  },
+  "main": "lib/fn",
+  "scripts": {
+    "lint:report": "eslint -f checkstyle -o build2/reports/lint/eslint-checkstyle-result.xml .",
+    "lint": "eslint .",
+    "test:coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "test:unit": "istanbul cover _mocha",
+    "test:unit-report": "istanbul cover _mocha -- -R mocha-junit-reporter -O mochaFile=./build2/reports/unit/mocha-junit-result.xml",
+    "test:report": "(npm run test:unit-report || true) && npm run test:coverage",
+    "test": "npm run test:unit && npm run test:coverage",
+    "ci-pkginfo": "node bin/ci-pkginfo",
+    "ci-pkginfo:dataload": "npm run ci-pkginfo -- -t dataload",
+    "ci-update-package": "ci-update-package"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@okta/ci-update-package": "^1.1.0",
+    "chai": "3.5.0",
+    "eslint": "2.7.0",
+    "istanbul": "0.4.3",
+    "mocha": "2.4.5",
+    "mocha-junit-reporter": "1.10.0"
+  },
+  "dependencies": {
+    "commander": "2.9.0"
+  }
+}
