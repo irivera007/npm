@@ -1,6 +1,6 @@
 {
   "name": "/generator-npm",
-  "version": "1.2.0",
+  "version": "66.6.7",
   "description": "Bootstraps npm modules",
   "scripts": {
     "lint:report": "eslint -f checkstyle -o build2/reports/lint/eslint-checkstyle-result.xml .",
